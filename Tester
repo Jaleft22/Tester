@@ -1,0 +1,48 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Jaleft2 Scripts", "Ocean")
+ 
+--main
+local Main = Window:NewTab("Main")
+local MainSection = Main:NewSection("Main")
+ 
+ 
+MainSection:NewButton("infiniteyield:)", "FE Admin comands", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+end)
+ 
+ 
+ 
+--Local Player 
+ 
+local Tab = Window:NewTab("Player")
+local PlayerSection = Tab:NewSection("Player")
+ 
+ 
+PlayerSection:NewToggle("SuperHuman", "Makes You fast and Jump high", function(state)
+    if state then
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 120
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = 120
+    else
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
+    end
+end)
+ 
+ 
+PlayerSection:NewSlider("WalkSpeed Control", "Let's you control the speed unlike the Superhuman", 15000, 16, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+ 
+PlayerSection:NewSlider("Jumpower Control", "Let's you control the Jumpower unlike the Superhuman", 500, 50, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+end)
+ 
+--games 
+ 
+local games = Window:NewTab("games, script")
+local gamesSection = games:NewSection("games")
+ 
+gamesSection:NewButton("Blox fruit", "Opens a blox fruits script (not mine)", function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/acsu123/HOHO_H/main/Loading_UI'))()
+    print("Clicked")
+end)
